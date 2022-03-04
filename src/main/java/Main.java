@@ -13,7 +13,9 @@ public class Main {
         driver.get("https://demoqa.com/buttons");
 
         MainPage mainPage = new MainPage(driver);
-        mainPage.getText();
+        mainPage.click();
+        mainPage.assertText();
+        driver.quit();
 
     }
 }
