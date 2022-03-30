@@ -3,9 +3,7 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 
 public class MainPage {
     WebDriver driver;
@@ -13,6 +11,11 @@ public class MainPage {
     private static By doubleClickLocator = By.id ("doubleClickBtn");
     private static By rightClickLocator = By.id ("rightClickBtn");
     private static By clickLocator = By.xpath ("//button[text()='Click Me']");
+
+
+//    public String getClickLocator() {
+//        return driver.findElement(clickLocator).getText();
+//    }
 
 
     public MainPage(WebDriver driver) {
@@ -32,7 +35,7 @@ public class MainPage {
         return new MainPage(driver);
     }
 
-    public void assertText () {
+    public void assertText() {
         boolean isHaveDoubleClickText = !driver.findElements(doubleClickLocator).isEmpty();
         boolean isHaveRightClickText = !driver.findElements(rightClickLocator).isEmpty();
         boolean isHaveClickMeText = !driver.findElements(clickLocator).isEmpty();
