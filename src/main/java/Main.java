@@ -42,7 +42,6 @@ public class Main {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://demoqa.com/buttons");
         MainPage mainPage = new MainPage(driver);
-
         mainPage.click();
         mainPage.assertText();
     }
