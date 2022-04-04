@@ -8,6 +8,7 @@ import java.time.Duration;
 
 public class Main {
     static WebDriver driver;
+
     @Rule
     public Timeout globalTimeout = Timeout.seconds(180);
 
@@ -38,18 +39,11 @@ public class Main {
 
     @Test
     public void test1() {
-        driver = new ChromeDriver();
-
-//        String expectedText = "";
-//        String text = "";
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://demoqa.com/buttons");
         MainPage mainPage = new MainPage(driver);
+
         mainPage.click();
         mainPage.assertText();
-//        mainPage.getClickLocator();
-//        Assert.assertEquals(expectedText,text);
-        driver.quit();
     }
 }
