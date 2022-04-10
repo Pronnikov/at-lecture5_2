@@ -1,5 +1,6 @@
 package page;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,6 +33,7 @@ public class MainPage {
         this.driver=driver;
     }
 
+    @Step ("Нажимаем на кнопки")
     public MainPage click() {
         WebElement doubleClick = driver.findElement(doubleClickLocator);
         WebElement rightClick = driver.findElement(rightClickLocator);
@@ -45,6 +47,7 @@ public class MainPage {
         return new MainPage(driver);
     }
 
+    @Step ("Проверяем результат")
     public void assertText() {
         String isHaveDoubleClickText = driver.findElement(doubleClickLocator).getText();
         String isHaveRightClickText = driver.findElement(rightClickLocator).getText();

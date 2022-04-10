@@ -1,3 +1,5 @@
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.junit.rules.Timeout;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +8,7 @@ import page.MainPage;
 
 import java.time.Duration;
 
+@DisplayName("Тест на JUnit")
 public class Main {
     static WebDriver driver;
 
@@ -37,6 +40,7 @@ public class Main {
         if (driver != null) driver.quit();
     }
 
+    @DisplayName("Тест на корректность кликов по кнопкам")
     @Test
     public void test1() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
