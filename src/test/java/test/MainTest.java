@@ -1,15 +1,16 @@
-import io.qameta.allure.Step;
+package test;
+
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.*;
 import org.junit.rules.Timeout;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import page.MainPage;
+import step.MainPage;
 
 import java.time.Duration;
 
 @DisplayName("Тест на JUnit")
-public class Main {
+public class MainTest {
     static WebDriver driver;
 
     @Rule

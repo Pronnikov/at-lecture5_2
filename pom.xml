@@ -9,28 +9,32 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <aspectj.version>1.9.2</aspectj.version>
     </properties>
 
-<!--        <build>-->
-<!--            <plugins>-->
-<!--                <plugin>-->
-<!--                    <groupId>org.apache.maven.plugins</groupId>-->
-<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                    <configuration>-->
-<!--                        <source>8</source>-->
-<!--                        <target>8</target>-->
-<!--                    </configuration>-->
-<!--                </plugin>-->
-<!--            </plugins>-->
-<!--        </build>-->
+    <!--        <build>-->
+    <!--            <plugins>-->
+    <!--                <plugin>-->
+    <!--                    <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--                    <configuration>-->
+    <!--                        <source>8</source>-->
+    <!--                        <target>8</target>-->
+    <!--                    </configuration>-->
+    <!--                </plugin>-->
+    <!--            </plugins>-->
+    <!--        </build>-->
 
     <dependencies>
-                <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-java</artifactId>
-                    <version>4.1.1</version>
-                </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.1.1</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -53,7 +57,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.14</version>
                 <configuration>
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
@@ -62,6 +66,12 @@
                             <name>listener</name>
                             <value>io.qameta.allure.junit4.AllureJunit4</value>
                         </property>
+
+<!--                        <property>-->
+<!--                            <name>allure.results.directory</name>-->
+<!--                            <value>${project.build.directory}/allure-results</value>-->
+<!--                        </property>-->
+
                     </properties>
                 </configuration>
                 <dependencies>
@@ -73,23 +83,23 @@
                 </dependencies>
             </plugin>
 
-            <!--            <plugin>-->
-            <!--                <groupId>io.qameta.allure</groupId>-->
-            <!--                <artifactId>allure-maven</artifactId>-->
-            <!--                <version>2.8</version>-->
-            <!--                <configuration>-->
-            <!--                    <reportVersion>2.7.0</reportVersion>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
+<!--                        <plugin>-->
+<!--                            <groupId>io.qameta.allure</groupId>-->
+<!--                            <artifactId>allure-maven</artifactId>-->
+<!--                            <version>2.9</version>-->
+<!--                            <configuration>-->
+<!--                                <reportVersion>2.6.0</reportVersion>-->
+<!--                            </configuration>-->
+<!--                        </plugin>-->
 
-                            <plugin>
-                                <groupId>org.apache.maven.plugins</groupId>
-                                <artifactId>maven-compiler-plugin</artifactId>
-                                <configuration>
-                                    <source>8</source>
-                                    <target>8</target>
-                                </configuration>
-                            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>8</source>-->
+<!--                    <target>8</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
@@ -101,11 +111,10 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.9</version>
                 <configuration>
-                    <reportVersion>2.6.0</reportVersion>
+                    <reportVersion>2.9.0</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
     </reporting>
-
 
 </project>
