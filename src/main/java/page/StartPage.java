@@ -31,16 +31,11 @@ public class StartPage {
     }
 
 
-    public void getText() {
+    public boolean getText() {
         boolean isHaveDoubleClickText = !driver.findElements(doubleClickText).isEmpty();
         boolean isHaveRightClickText = !driver.findElements(rightClickText).isEmpty();
         boolean isHaveClickmeClickText = !driver.findElements(clickmeClickText).isEmpty();
 
-
-        if (isHaveDoubleClickText && isHaveRightClickText && isHaveClickmeClickText) {
-            System.out.println("Тест пройден успешно");
-        } else {
-            System.out.println("Тест не пройден");
-        }
+        return isHaveDoubleClickText && isHaveRightClickText && isHaveClickmeClickText;
     }
 }
